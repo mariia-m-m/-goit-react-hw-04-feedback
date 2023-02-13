@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styles from './styles.module.css';
 
-const Movie = ({ movies, showMovie }) => {
+const Movie = ({ movies }) => {
   const elements = movies.map(({ id, title }) => (
     <li key={id}>
       <h1>{title}</h1>

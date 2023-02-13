@@ -4,19 +4,16 @@ import MoviesGallery from './MoviesGallery';
 import Movie from './Movie';
 
 const Searchbar = () => {
-  const [movies, setImages] = useState([]);
-  const [search, setSearch] = useState('');
-  const [page, setPage] = useState(1);
+  const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     const fetchImages = async () => {
-      setLoading(true);
-      const data = getMovies(search, page);
+      const data = getMovies();
       console.log(data);
-      setImages(prevImages => [...prevImages, ...data]);
+      setMovies(prevMovies => [...prevMovies, ...data.results]);
     };
     fetchImages();
-  }, [search, page, setLoading, setImages, setError]);
+  }, [setMovies]);
 
   return (
     <MoviesGallery>

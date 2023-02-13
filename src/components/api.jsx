@@ -1,13 +1,12 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://api.themoviedb.org/3/movie/500';
+const API_KEY = 'fa28ddeb45f8fcba0058ea610f4f6a84';
+axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
 
-axios.defaults.baseURL = BASE_URL;
-
-export const getMovies = async (request, page, per_page) => {
+export const getMovies = async () => {
   try {
     const response = await axios.get(
-      `${BASE_URL}?api_key=fa28ddeb45f8fcba0058ea610f4f6a84`
+      `/trending/movie/day?api_key=fa28ddeb45f8fcba0058ea610f4f6a84`
     );
     return response.data;
   } catch (error) {
@@ -15,17 +14,11 @@ export const getMovies = async (request, page, per_page) => {
   }
 };
 
-// const instance = axios.create({
-//   base_url: 'https://api.themoviedb.org/3/movie/500/?',
-// });
+// import axios from 'axios';
+// const API_KEY = 'fa28ddeb45f8fcba0058ea610f4f6a84';
+// axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
 
-// export const getMovies = async (search, page) => {
-//   const { data } = await instance.get({
-//     params: {
-//       api_key: 'fa28ddeb45f8fcba0058ea610f4f6a84',
-//       query: 'cats',
-//       page: '1',
-//     },
-//   });
-//   return data;
+// export const getTrendingMoviee = async () => {
+//   console.log(getTrendingMoviee);
+//   return await axios.get(`/trending/movie/day?api_key=${API_KEY}`);
 // };
