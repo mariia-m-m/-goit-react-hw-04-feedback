@@ -6,8 +6,6 @@ import Movie from './Movie';
 const Searchbar = () => {
   const [movies, setImages] = useState([]);
   const [search, setSearch] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
   const [page, setPage] = useState(1);
 
   useEffect(() => {
