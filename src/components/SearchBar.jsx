@@ -9,7 +9,7 @@ const Searchbar = () => {
   useEffect(() => {
     const fetchImages = async () => {
       const data = getMovies();
-      console.log(data);
+      console.log(...data.results);
       setMovies(prevMovies => [...prevMovies, ...data.results]);
     };
     fetchImages();

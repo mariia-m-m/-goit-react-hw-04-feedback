@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import styles from './styles.module.css';
+// import PropTypes from 'prop-types';
+// import styles from './styles.module.css';
 
 const Movie = ({ movies }) => {
   const elements = movies.map(({ id, title }) => (
