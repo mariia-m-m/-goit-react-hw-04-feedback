@@ -1,11 +1,14 @@
 // import PropTypes from 'prop-types';
-// import styles from './styles.module.css';
+import styles from './styles.module.css';
+import { Link } from 'react-router-dom';
 
 const Movie = ({ movies }) => {
   const elements = movies.map(({ id, title }) => (
-    <li key={id}>
-      <h1>{title}</h1>
-    </li>
+    <Link className={styles.link} to={`movies/${id}`} key={id}>
+      <li>
+        <h1>{title}</h1>
+      </li>
+    </Link>
   ));
   return elements;
 };

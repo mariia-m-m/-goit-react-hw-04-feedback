@@ -7,12 +7,11 @@ const Searchbar = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    const fetchImages = async () => {
-      const data = getMovies();
-      console.log(...data.results);
-      setMovies(prevMovies => [...prevMovies, ...data.results]);
+    const fetchList = async () => {
+      const data = await getMovies();
+      setMovies(prevMovies => [...data.results]);
     };
-    fetchImages();
+    fetchList();
   }, [setMovies]);
 
   return (
