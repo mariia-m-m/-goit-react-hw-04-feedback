@@ -1,24 +1,52 @@
-import { getMovies } from './api';
-import { useState, useEffect } from 'react';
-import MoviesGallery from './MoviesGallery';
-import Movie from './Movie';
+import { useState, useCallback } from 'react';
+import PropTypes from 'prop-types';
 
-const Searchbar = () => {
-  const [movies, setMovies] = useState([]);
+import styles from '../components/styles.module.css';
 
-  useEffect(() => {
-    const fetchList = async () => {
-      const data = await getMovies();
-      setMovies(prevMovies => [...data.results]);
-    };
-    fetchList();
-  }, [setMovies]);
+const Searchbar = ({ onSubmit }) => {
+  const [search, setSearch] = useState('');
+
+  const handleChage = useCallback(event => {
+    const { value } = event.target;
+    setSearch(value);
+  }, []);
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    onSubmit({ search });
+    reset();
+  };
+
+  const reset = () => {
+    setSearch('');
+  };
 
   return (
-    <MoviesGallery>
-      <Movie movies={movies} />
-    </MoviesGallery>
+    <header className={styles.SearchBar}>
+      <form className={styles.SearchForm} onSubmit={handleSubmit}>
+        <button type="submit" className={styles.SearchFormButton}>
+          <span className={styles.SearchFormButtonLabel}></span>
+        </button>
+        <label htmlFor="search">
+          <input
+            className={styles.SearchFormInput}
+            onChange={handleChage}
+            name="search"
+            value={search.value}
+            type="text"
+            autoComplete="off"
+            autoFocus
+            placeholder="Search movies"
+            required
+          />
+        </label>
+      </form>
+    </header>
   );
 };
 
 export default Searchbar;
+
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};

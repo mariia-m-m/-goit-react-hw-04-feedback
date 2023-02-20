@@ -2,13 +2,13 @@ import PropTypes from 'prop-types';
 import styles from './styles.module.css';
 import { Link, useLocation } from 'react-router-dom';
 
-const Movie = ({ movies }) => {
+const MovieSearch = ({ movies }) => {
   const location = useLocation();
   const elements = movies.map(({ id, title }) => (
     <Link
       className={styles.link}
       state={{ from: location }}
-      to={`movies/${id}`}
+      to={`${id}`}
       key={id}
     >
       <li>
@@ -19,17 +19,4 @@ const Movie = ({ movies }) => {
   return elements;
 };
 
-export default Movie;
-
-Movie.defaultProps = {
-  images: [],
-};
-
-Movie.propTypes = {
-  images: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
-    })
-  ),
-};
+export default MovieSearch;

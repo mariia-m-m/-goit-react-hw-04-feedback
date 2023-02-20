@@ -1,7 +1,7 @@
-import Searchbar from 'components/SearchBar';
+import MovieHomeList from 'components/MovieHomeList';
 
 const Home = () => {
-  return <Searchbar />;
+  return <MovieHomeList />;
 };
 
 export default Home;
