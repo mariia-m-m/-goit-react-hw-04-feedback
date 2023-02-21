@@ -197,7 +197,7 @@ img {
   margin: 10px;
 }
 .loadButton {
-  margin: 10px;
+  margin-top: 10px;
   color: black;
   background-color: orange;
   border: 1px solid orangered;
