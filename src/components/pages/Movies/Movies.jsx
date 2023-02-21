@@ -17,7 +17,7 @@ const Movies = () => {
       setSearchParams({ search, page: 1 });
       setMovies([]);
     },
-    [searchParams, setMovies]
+    [setSearchParams, setMovies]
   );
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const Movies = () => {
 
   const loadMore = useCallback(() => {
     setSearchParams({ search, page: Number(page) + 1 });
-  }, [setSearchParams]);
+  }, [setSearchParams, page, search]);
 
   return (
     <>

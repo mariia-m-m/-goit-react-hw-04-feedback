@@ -22,7 +22,7 @@ const MovieDetails = () => {
 
   const goBack = useCallback(() => {
     navigate(location.state.from);
-  }, [navigate]);
+  }, [location.state.from, navigate]);
 
   useEffect(() => {
     const fetchDetails = async () => {
@@ -30,7 +30,7 @@ const MovieDetails = () => {
       setMovie(data);
     };
     fetchDetails();
-  }, [setMovie]);
+  }, [setMovi, movieId]);
   const genres = movie?.genres.map(({ id, name }) => <li key={id}>{name}</li>);
   return (
     <div>
