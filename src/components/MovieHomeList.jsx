@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import MoviesGallery from './MoviesGallery';
 import Movie from './Movie';
 
-const Searchbar = () => {
+const MovieHomeList = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -21,4 +21,4 @@ const Searchbar = () => {
   );
 };
 
-export default Searchbar;
+export default MovieHomeList;
