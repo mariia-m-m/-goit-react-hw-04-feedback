@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import MoviesGallery from 'components/MoviesGallery';
 import MovieSearch from 'components/MovieSearch';
-import Searchbar from 'components/Searchbar';
+import Searchbar from './Searchbar';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
