@@ -30,7 +30,7 @@ const MovieDetails = () => {
       setMovie(data);
     };
     fetchDetails();
-  }, [setMovi, movieId]);
+  }, [setMovie, movieId]);
   const genres = movie?.genres.map(({ id, name }) => <li key={id}>{name}</li>);
   return (
     <div>
