@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { getMovies } from './api';
 import { useState, useEffect } from 'react';
 import MoviesGallery from './MoviesGallery';
