@@ -4,8 +4,8 @@ import styles from './styles.module.css';
 
 const MoviesGallery = ({ children }) => {
   return (
-    <div className={styles.block}>
-      <ol className={styles.list}>{children}</ol>
+    <div>
+      <ul className={styles.block}>{children}</ul>
     </div>
   );
 };

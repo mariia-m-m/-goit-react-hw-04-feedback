@@ -14,7 +14,6 @@ export const App = () => {
       style={{
         height: '100vh',
         justifyContent: 'center',
-        fontSize: 40,
         color: '#010101',
       }}
     >

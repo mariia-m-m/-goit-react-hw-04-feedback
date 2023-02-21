@@ -1,3 +1,4 @@
+import styles from '../../styles.module.css';
 import Searchbar from 'components/Searchbar';
 import { getMoviesSearch } from 'components/api';
 import { useState, useEffect, useCallback } from 'react';
@@ -43,7 +44,9 @@ const Movies = () => {
         <MovieSearch movies={movies} />
       </MoviesGallery>
       {page > 0 ? (
-        <button onClick={loadMore}>LoadMore</button>
+        <button onClick={loadMore} className={styles.loadButton}>
+          LoadMore
+        </button>
       ) : (
         <p>Wait for search...</p>
       )}

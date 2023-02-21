@@ -70,7 +70,9 @@ td {
   text-decoration: none;
 }
 body {
-  line-height: 1;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  line-height: 20px;
 }
 ol,
 ul {
@@ -112,11 +114,13 @@ table {
 .block {
   padding: 40px;
   display: block;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .link {
   text-decoration: none;
-  color: gray;
+  color: black;
 }
 .SearchForm {
   display: flex;
@@ -179,4 +183,42 @@ table {
 .SearchFormInput::placeholder {
   font: inherit;
   font-size: 18px;
+}
+.boxDetails {
+  display: flex;
+  flex-direction: row;
+}
+h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 25px;
+  margin: 10px;
+}
+img {
+  margin: 10px;
+}
+.loadButton {
+  margin: 10px;
+  color: black;
+  background-color: orange;
+  border: 1px solid orangered;
+}
+.title {
+  margin: 10px;
+  font-weight: 600;
+  color: darkblue;
+}
+.item {
+  width: 200px;
+  margin: 20px;
+}
+.itemList {
+  margin: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 14px;
+}
+.filmName {
+  color: darkblue;
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 500;
 }
