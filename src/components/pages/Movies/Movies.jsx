@@ -1,10 +1,10 @@
 import styles from '../../styles.module.css';
-import Searchbar from 'components/Searchbar';
 import { getMoviesSearch } from 'components/api';
 import { useState, useEffect, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import MoviesGallery from 'components/MoviesGallery';
 import MovieSearch from 'components/MovieSearch';
+import Searchbar from 'components/Searchbar';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
