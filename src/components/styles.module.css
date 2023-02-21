@@ -201,6 +201,7 @@ img {
   color: black;
   background-color: orange;
   border: 1px solid orangered;
+  margin-bottom: 50px;
 }
 .title {
   margin: 10px;
