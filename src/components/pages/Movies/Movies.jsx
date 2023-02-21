@@ -12,10 +12,13 @@ const Movies = () => {
   const search = searchParams.get('search');
   const page = searchParams.get('page');
 
-  const searchMovies = useCallback(({ search }) => {
-    setSearchParams({ search, page: 1 });
-    setMovies([]);
-  }, []);
+  const searchMovies = useCallback(
+    ({ search }) => {
+      setSearchParams({ search, page: 1 });
+      setMovies([]);
+    },
+    [searchParams, setMovies]
+  );
 
   useEffect(() => {
     if (!search) {
@@ -34,7 +37,7 @@ const Movies = () => {
 
   const loadMore = useCallback(() => {
     setSearchParams({ search, page: Number(page) + 1 });
-  });
+  }, [setSearchParams]);
 
   return (
     <>

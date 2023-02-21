@@ -18,7 +18,7 @@ const Reviews = () => {
       }
     };
     fetchActors();
-  }, []);
+  }, [movieId]);
 
   const elements = reviews.map(({ content }) => (
     <li key={nanoid(3)} className={styles.itemList}>

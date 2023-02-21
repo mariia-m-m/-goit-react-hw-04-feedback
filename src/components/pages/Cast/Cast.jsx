@@ -18,7 +18,7 @@ const Cast = () => {
       }
     };
     fetchActors();
-  }, []);
+  }, [movieId]);
 
   const elements = actors.map(({ name, profile_path }) => (
     <li className={styles.itemList} key={nanoid(3)}>
