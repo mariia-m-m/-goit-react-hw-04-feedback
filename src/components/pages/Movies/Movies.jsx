@@ -1,5 +1,5 @@
 import styles from '../../styles.module.css';
-import Searchbar from 'components/Searchbar';
+import Searchbar from '../../Searchbar';
 import { getMoviesSearch } from 'components/api';
 import { useState, useEffect, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
@@ -8,7 +8,6 @@ import MovieSearch from 'components/MovieSearch';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
-  const [error, setError] = useState('');
   const [searchParams, setSearchParams] = useSearchParams();
   const search = searchParams.get('search');
   const page = searchParams.get('page');
